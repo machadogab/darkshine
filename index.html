@@ -162,42 +162,53 @@
 
         	</div>
             <div class="portfolioContainer wow fadeInUp delay-04s">
-            	<div class=" Portfolio-box printdesign">
-                	<a href="#"><img src="img/Portfolio-pic1.jpg" alt=""></a>
-                	<h3>Foto Album</h3>
+                <div class="Portfolio-box webdesign">
+                    <img src="img/beyond.jpg" alt="">
+                    <h3>Beyond</h3>
+                    <p>Print Design</p>
+                    <!-- <span class="arrow-up"></span> -->
+                </div>
+                <div class="app-description">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="img/bikepoa.png">
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Slashrun</h3>
+                        <h3>um app dos tipo de corrida</h3>
+                        <p>Lorem ipsum Officia fugiat officia et velit veniam sunt est proident nulla mollit proident tempor in enim veniam sint commodo labore sunt ex officia Duis proident ullamco commodo cillum ut elit sint in dolore dolore sit pariatur dolor enim ea.</p>
+                    </div>
+                </div>
+            </div>
+                <div class="Portfolio-box webdesign">
+                    <img src="img/gongo.jpg" alt="">
+                    <h3>Gongo</h3>
+                    <p>Print Design</p>
+                    <!-- <span class="arrow-up"></span> -->
+                </div>
+                <div class="Portfolio-box webdesign">
+                    <img src="img/ruufrgs.jpg" alt="">
+                    <h3>Foto Album</h3>
+                    <p>Print Design</p>
+                    <!-- <span class="arrow-up"></span> -->
+                </div>
+                <div class="Portfolio-box webdesign">
+                    <img src="img/rett.jpg" alt="">
+                    <h3>Foto Album</h3>
+                    <p>Print Design</p>
+                    <!-- <span class="arrow-up"></span> -->
+                </div>
+                <div class="Portfolio-box webdesign">
+                    <img src="img/slashrun.jpg" alt="">
+                    <h3>Foto Album</h3>
                     <p>Print Design</p>
                     <span class="arrow-up"></span>
                 </div>
                 <div class="Portfolio-box webdesign">
-                    <a href="#"><img src="img/Portfolio-pic2.jpg" alt=""></a>
-                    <h3>Luca Theme</h3>
-                    <p>Web Design</p>
-                </div>
-                <div class="Portfolio-box branding">
-                    <a href="#"><img src="img/Portfolio-pic3.jpg" alt=""></a>
-                    <h3>Uni Sans</h3>
-                    <p>Branding</p>
-                </div>
-                <div class="app-description">
-                    <h2>Gongo</h2>
-                    <h3>Um app de agenda</h3>
-                    <img src="img/iphone.png" style="width: 15%;" alt="">
-                    <p>Lorem ipsum Commodo commodo minim consectetur in officia do magna ut do proident esse sint ex voluptate labore in et dolore id qui.</p>
-                </div>
-                <div class="Portfolio-box photography">
-                	<a href="#"><img src="img/Portfolio-pic4.jpg" alt=""></a>
-                	<h3>Vinyl Record</h3>
-                    <p>Photography</p>
-                </div>
-                <div class="Portfolio-box branding">
-                	<a href="#"><img src="img/Portfolio-pic5.jpg" alt=""></a>
-                	<h3>Hipster</h3>
-                    <p>Branding</p>
-                </div>
-                <div class="Portfolio-box photography">
-                	<a href="#"><img src="img/Portfolio-pic6.jpg" alt=""></a>
-                	<h3>Windmills</h3>
-                    <p>Photography</p>
+                    <img src="img/neonfighter.jpg" alt="">
+                    <h3>Foto Album</h3>
+                    <p>Print Design</p>
+                    <!-- <span class="arrow-up"></span> -->
                 </div>
             </div>
         </section><!--main-section-end-->
@@ -375,7 +386,7 @@
         <script type="text/javascript">
         	$(window).load(function(){
 
-        		$('.main-nav li a').bind('click',function(event){
+        		$('.main-nav li a').bind('click', function(event){
         			var $anchor = $(this);
 
         			$('html, body').stop().animate({
@@ -436,6 +447,23 @@
             });
 
         });
+
+        </script>
+
+        <script type="text/javascript">
+
+            $(window).load(function() {
+                var classname = document.getElementsByClassName("Portfolio-box");
+
+                var myFunction = function() {
+                    var attribute = this.getAttribute("data-myattribute");
+                    alert(attribute);
+                };
+
+                for (var i = 0; i < classname.length; i++) {
+                    classname[i].addEventListener('click', myFunction, false);
+                }
+            });
 
         </script>
     </body>
