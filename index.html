@@ -156,59 +156,58 @@
               <div class="portfolioFilter">
                 <ul class="Portfolio-nav wow fadeIn delay-02s">
                 	<li><a href="#" data-filter="*" class="current" >All</a></li>
-                    <li><a href="#" data-filter=".webdesign" >Web design</a></li>
+                    <li><a href="#" data-filter=".webdesign">Web design</a></li>
                 </ul>
                </div>
 
         	</div>
-            <div class="portfolioContainer wow fadeInUp delay-04s">
-                <div class="Portfolio-box webdesign">
-                    <img src="img/beyond.jpg" alt="">
-                    <h3>Beyond</h3>
-                    <p>Print Design</p>
-                    <!-- <span class="arrow-up"></span> -->
-                </div>
-                <div class="app-description">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="img/bikepoa.png">
-                    </div>
-                    <div class="col-md-6">
-                        <h2>Slashrun</h3>
-                        <h3>um app dos tipo de corrida</h3>
-                        <p>Lorem ipsum Officia fugiat officia et velit veniam sunt est proident nulla mollit proident tempor in enim veniam sint commodo labore sunt ex officia Duis proident ullamco commodo cillum ut elit sint in dolore dolore sit pariatur dolor enim ea.</p>
+            <div>
+                <div class="overlay" id="app-info">
+                    <div class="row">
+                        <div class="col-sm-12" style="text-align: right;">
+                            <img src="img/close-icon.svg" id="close-portfolio">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="img/bikepoa.png">
+                        </div>
+                        <div class="col-md-6 col-md-offset-1">
+                            <h2>Estações Bikepoa</h2>
+                            <h3>Lorem ipsum Proident pariatur adipisicing consequat.</h3>
+                            <p>Lorem ipsum In nulla laborum amet ad ut in adipisicing dolore commodo deserunt nulla ea nisi id sit esse laboris sed ex ut laboris in mollit exercitation adipisicing consequat consectetur proident cillum reprehenderit sit dolor qui reprehenderit qui consequat et reprehenderit qui dolore elit cupidatat enim veniam adipisicing dolor est Ut velit in fugiat aliqua reprehenderit est cupidatat sed quis elit exercitation proident eu dolore ullamco.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-                <div class="Portfolio-box webdesign">
-                    <img src="img/gongo.jpg" alt="">
-                    <h3>Gongo</h3>
-                    <p>Print Design</p>
-                    <!-- <span class="arrow-up"></span> -->
-                </div>
-                <div class="Portfolio-box webdesign">
-                    <img src="img/ruufrgs.jpg" alt="">
-                    <h3>Foto Album</h3>
-                    <p>Print Design</p>
-                    <!-- <span class="arrow-up"></span> -->
-                </div>
-                <div class="Portfolio-box webdesign">
-                    <img src="img/rett.jpg" alt="">
-                    <h3>Foto Album</h3>
-                    <p>Print Design</p>
-                    <!-- <span class="arrow-up"></span> -->
-                </div>
-                <div class="Portfolio-box webdesign">
-                    <img src="img/slashrun.jpg" alt="">
-                    <h3>Foto Album</h3>
-                    <p>Print Design</p>
-                    <span class="arrow-up"></span>
-                </div>
-                <div class="Portfolio-box webdesign">
-                    <img src="img/neonfighter.jpg" alt="">
-                    <h3>Foto Album</h3>
-                    <p>Print Design</p>
-                    <!-- <span class="arrow-up"></span> -->
+                <div class="portfolioContainer wow fadeInUp delay-04s">
+                    <div class="Portfolio-box webdesign">
+                        <img src="img/beyond.jpg" alt="" data-app="beyond">
+                        <h3>Beyond</h3>
+                        <p>Print Design</p>
+                    </div>
+                    <div class="Portfolio-box webdesign">
+                        <img src="img/gongo.jpg" alt="" data-app="gongo">
+                        <h3>Gongo</h3>
+                        <p>Print Design</p>
+                    </div>
+                    <div class="Portfolio-box webdesign">
+                        <img src="img/ruufrgs.jpg" alt="" data-app="ruufrgs">
+                        <h3>RU UFRGS</h3>
+                        <p>Print Design</p>
+                    </div>
+                    <div class="Portfolio-box webdesign">
+                        <img src="img/rett.jpg" data-app="rett">
+                        <h3>Rett</h3>
+                        <p>Print Design</p>
+                    </div>
+                    <div class="Portfolio-box webdesign">
+                        <img src="img/slashrun.jpg" alt="" data-app="slashrun">
+                        <h3>Slashrun</h3>
+                        <p>Print Design</p>
+                    </div>
+                    <div class="Portfolio-box webdesign">
+                        <img src="img/neonfighter.jpg" alt="" data-app="neonfighter">
+                        <h3>Neon Fighter</h3>
+                        <p>Print Design</p>
+                    </div>
                 </div>
             </div>
         </section><!--main-section-end-->
@@ -453,16 +452,27 @@
         <script type="text/javascript">
 
             $(window).load(function() {
-                var classname = document.getElementsByClassName("Portfolio-box");
 
-                var myFunction = function() {
-                    var attribute = this.getAttribute("data-myattribute");
-                    alert(attribute);
-                };
+                var appIcon = $('.Portfolio-box img');
 
-                for (var i = 0; i < classname.length; i++) {
-                    classname[i].addEventListener('click', myFunction, false);
-                }
+                $.each(appIcon, function() {
+                    $(this).on('click', function () {
+                        $('#app-info').addClass('app-description-open');
+                    })
+                });
+            });
+
+        </script>
+
+        <script type="text/javascript">
+
+            $(window).load(function() {
+
+                var closePortfolioButton = $('#close-portfolio');
+
+                closePortfolioButton.on('click', function () {
+                        $('#app-info').removeClass('app-description-open');
+                });
             });
 
         </script>
