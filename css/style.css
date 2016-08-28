@@ -102,9 +102,21 @@ p {
 
 .header{
     text-align:center;
-    background:url(../img/bg.png) no-repeat;
-    padding:100px 0;
-    background-size: 100%;
+    background-color: #ffffff;
+    background-image: url("../img/overlay.png"), -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 50, 50, 0.4)), url("../img/bg.png");
+    background-image: url("../img/overlay.png"), -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 50, 50, 0.4)), url("../img/bg.png");
+    background-image: url("../img/overlay.png"), -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 50, 50, 0.4)), url("../img/bg.png");
+    background-image: url("../img/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.3) 5%, rgba(120, 50, 120, 0.4)), url("../img/bg.png");
+    background-repeat: repeat,          no-repeat,          no-repeat;
+    background-size: 100px 100px, cover,                cover;
+    background-position: top left,      center center,      bottom center;
+    background-50: fixed,           fixed,              fixed;
+    
+    vertical-align: middle;
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
     height: 100vh;
 }
 
