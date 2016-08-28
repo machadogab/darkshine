@@ -164,16 +164,16 @@
             <div>
                 <div class="overlay" id="app-info">
                     <div class="row">
-                        <div class="col-sm-12" style="text-align: right;">
+                        <div class="col-sm-12" class="close-app-description">
                             <img src="img/close-icon.svg" id="close-portfolio">
                         </div>
                         <div class="col-md-4">
-                            <img src="img/bikepoa.png">
+                            <img src="img/bikepoa.png" id="app-image">
                         </div>
                         <div class="col-md-6 col-md-offset-1">
-                            <h2>Estações Bikepoa</h2>
-                            <h3>Lorem ipsum Proident pariatur adipisicing consequat.</h3>
-                            <p>Lorem ipsum In nulla laborum amet ad ut in adipisicing dolore commodo deserunt nulla ea nisi id sit esse laboris sed ex ut laboris in mollit exercitation adipisicing consequat consectetur proident cillum reprehenderit sit dolor qui reprehenderit qui consequat et reprehenderit qui dolore elit cupidatat enim veniam adipisicing dolor est Ut velit in fugiat aliqua reprehenderit est cupidatat sed quis elit exercitation proident eu dolore ullamco.</p>
+                            <h2 id="app-title"></h2>
+                            <h3 id="app-subTitle"></h3>
+                            <p id="app-description"></p>
                         </div>
                     </div>
                 </div>
@@ -459,25 +459,33 @@
         </script>
 
         <script type="text/javascript">
-
             $(window).load(function() {
-
+                var closePortfolioButton = $('#close-portfolio');
                 var appIcon = $('.Portfolio-box img');
+                var apps;
+
+                $.ajax({
+                    'url': 'https://darkshine-api.herokuapp.com/',
+                    'type': 'GET',
+                    'success': function(data) {
+                        if (data) {
+                            apps = data;
+                        }
+                    }
+                });
 
                 $.each(appIcon, function() {
                     $(this).on('click', function () {
+
+                        var app = apps[$(this).attr('data-app')]
+
+                        $('#app-title').text(app.title);
+                        $('#app-subTitle').text(app.subtitle);
+                        $('#app-description').text(app.description);
+
                         $('#app-info').addClass('app-description-open');
                     })
                 });
-            });
-
-        </script>
-
-        <script type="text/javascript">
-
-            $(window).load(function() {
-
-                var closePortfolioButton = $('#close-portfolio');
 
                 closePortfolioButton.on('click', function () {
                         $('#app-info').removeClass('app-description-open');

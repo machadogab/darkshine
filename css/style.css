@@ -959,4 +959,5 @@ img {
 
 #close-portfolio {
     cursor: pointer;
+    float: right;
 }
