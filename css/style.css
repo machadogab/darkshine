@@ -656,10 +656,14 @@ img {
     color:#dd4b39;
 }
 .team-leader ul li a.fa-github:hover{
-    color:#333333;
+    color:#555555;
 }
 .team-leader ul li a.fa-globe:hover{
     color:#dd4b39;
+}
+
+.team-leader ul li a.fa-linkedin:hover{
+    color:#0076BA;
 }
 
 /* Talk Business
