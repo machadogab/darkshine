@@ -914,27 +914,14 @@ img {
     -webkit-animation-delay: 1.2s;
 }
 
-.arrow-up {
-    border-bottom: 35px solid #F0F0F0;
-    border-left: 35px solid transparent;
-    border-right: 35px solid transparent;
-    height: 0;
-    width: 0;
-    display: block;
-    margin-left: 40%;
-    margin-top: .5em;
-}
-
 .app-description {
-    margin-top: -2%;
-    border-radius: 20px;
+    margin-top: 25vh;
+    height: 50vh;
     background-color: #F0F0F0;
     color: #6c6c6c;
     margin-bottom: 2%;
-    margin-left: 10%;
     padding: 2em;
     transition: height 2s linear;
-    width: 80%;
     opacity: 0;
     display: none;
 }
@@ -946,6 +933,11 @@ img {
 
 .app-description p {
     margin-top: 2em;
+}
+
+#app-image{
+    width: 45%;
+    margin-left: 20%;
 }
 
 .fade-in {
@@ -961,4 +953,23 @@ img {
 #close-portfolio {
     cursor: pointer;
     float: right;
+}
+
+.overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 35%,  rgba(320,0,0,0.4));
+}
+
+
+@media (max-width: 768px) {
+    .app-description {
+        height: 70vh;
+        margin-top: 15vh;
+        overflow-y: scroll
+    }
 }
