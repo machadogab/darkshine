@@ -947,7 +947,6 @@ img {
 .app-description-open {
     display:block;
     opacity: 1;
-    transition: opacity .5s;
 }
 
 #close-portfolio {

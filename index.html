@@ -516,6 +516,13 @@
                         $('#app-subTitle').text(app.subtitle);
                         $('#app-description').text(app.description);
 
+                        $(document).mouseup(function (e) {
+                            var container = $('#app-info');
+
+                            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                                container.parent().remove();
+                            }
+                        });
 
                         closePortfolioButton = $('#close-portfolio');
 
