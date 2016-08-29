@@ -192,7 +192,7 @@
                         <p>iOS</p>
                     </div>
                     <div class="Portfolio-box iOS">
-                        <img src="img/bikepoa.jpg" data-app="bikepoa">
+                        <img src="img/bikepoa.jpg" data-app="bikePoa">
                         <h3>Estações Bike POA</h3>
                         <p>iOS + Watch</p>
                     </div>
@@ -468,7 +468,7 @@
                 var appIcon = $('.Portfolio-box img');
                 var apps;
                 var appInfo =
-                    '<div class="overlay">' +
+                    '<div class="overlay" id="overlay">' +
                         '<div class="app-description" id="app-info">'+
                             '<div class="row">'+
                                 '<div class="col-sm-12" class="close-app-description">'+
@@ -511,10 +511,18 @@
 
                         var app = apps[$(this).attr('data-app')]
 
+                        $('#app-image').attr('src', 'img/' + $(this).attr('data-app') + '.png');
                         $('#app-title').text(app.title);
                         $('#app-subTitle').text(app.subtitle);
                         $('#app-description').text(app.description);
 
+
+                        closePortfolioButton = $('#close-portfolio');
+
+                        closePortfolioButton.on('click', function () {
+                            $('#app-info').parent().remove();
+                            $('body').css('overflow-y', 'auto');
+                        });
 
                         closePortfolioButton = $('#close-portfolio');
 
