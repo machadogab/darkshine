@@ -255,7 +255,8 @@ p {
 
 .service-list-col1 {
     float:left;
-    width:60px;
+    width:70px;
+    text-align: center;
 }
 
 .service-list-col1 i {
@@ -265,6 +266,10 @@ p {
     color:#222;
     font-family: 'FontAwesome';
     line-height:38px;
+}
+
+.service-list-col1 i.fa-mobile {
+    font-size:56px;
 }
 
 .service-list-col2 {
@@ -403,7 +408,7 @@ p {
     text-align:center;
     margin-top: 30px;
     margin-bottom:30px;
-    width:350px;
+    width:375px;
     overflow:hidden;
     float:left;
     padding:0;
