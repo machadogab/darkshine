@@ -520,6 +520,7 @@
                             var container = $('#app-info');
 
                             if (!container.is(e.target) && container.has(e.target).length === 0) {
+                                $('body').css('overflow-y', 'auto');
                                 container.parent().remove();
                             }
                         });
