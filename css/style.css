@@ -111,7 +111,7 @@ p {
     background-size: 100px 100px, cover,                cover;
     background-position: top left,      center center,      bottom center;
     background-50: fixed,           fixed,              fixed;
-    
+
     vertical-align: middle;
     display: flex;
     justify-content:center;
@@ -926,15 +926,17 @@ img {
 }
 
 .app-description {
+    margin-top: -2%;
     border-radius: 20px;
+    background-color: #F0F0F0;
     color: #6c6c6c;
-    height: 0;
     margin-bottom: 2%;
     margin-left: 10%;
     padding: 2em;
-    position: absolute;
     transition: height 2s linear;
     width: 80%;
+    opacity: 0;
+    display: none;
 }
 
 .app-description h2 {
@@ -950,18 +952,8 @@ img {
     height: 100%;
 }
 
-.overlay {
-    padding: 1.5em;
-    background-color: #F0F0F0;
-    position: absolute;
-    width: 80%;
-    margin-left: 10%;
-    border-radius: 20px;
-    opacity: 0;
-}
-
 .app-description-open {
-    z-index: 999;
+    display:block;
     opacity: 1;
     transition: opacity .5s;
 }
