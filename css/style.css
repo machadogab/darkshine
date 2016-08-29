@@ -955,6 +955,10 @@ img {
     float: right;
 }
 
+.close-app-description {
+    min-height: 30px;
+}
+
 .overlay {
     position: fixed;
     height: 100%;
