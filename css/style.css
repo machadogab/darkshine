@@ -924,6 +924,7 @@ img {
     transition: height 2s linear;
     opacity: 0;
     display: none;
+    overflow-y: auto;
 }
 
 .app-description h2 {
@@ -973,6 +974,5 @@ img {
     .app-description {
         height: 70vh;
         margin-top: 15vh;
-        overflow-y: scroll
     }
 }
