@@ -966,12 +966,14 @@ img {
 #close-portfolio {
     cursor: pointer;
     float: right;
-    width: 40%;
+    width: 2%;
     margin-top: -2em;
 }
 
-.close-app-description {
-    min-height: 30px;
+@media(max-width: 992px) {
+    #close-portfolio {
+        width: 10%;
+    }
 }
 
 .overlay {
