@@ -314,6 +314,7 @@ p {
 }
 
 .featured-box-col1 i {
+    text-align: center;
     display:block;
     line-height:38px;
     font-family: 'FontAwesome';
