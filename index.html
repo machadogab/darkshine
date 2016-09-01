@@ -125,33 +125,6 @@
                 	<div class="col-xs-12 col-md-7 featured-work">
                     	<h2>O que fazemos</h2>
                     	<P class="padding-b">Para que o resultado do nosso trabalho seja extraordinário nosso foco está em:</P>
-                    	<div class="featured-box">
-                        	<div class="featured-box-col1 wow fadeInRight delay-02s">
-                            	<i class="fa-heart-o"></i>
-                            </div>
-                        	<div class="featured-box-col2 wow fadeInRight delay-02s">
-                                <h3>Experiência do usuário</h3>
-                                <p>Queremos que os usuários amem os aplicativos que fazemos.</p>
-                            </div>
-                        </div>
-                        <div class="featured-box">
-                        	<div class="featured-box-col1 wow fadeInRight delay-04s">
-                            	<i class="fa-lock"></i>
-                            </div>
-                        	<div class="featured-box-col2 wow fadeInRight delay-04s">
-                                <h3>Segurança</h3>
-                                <p>A segurança está sempre em primeiro lugar</p>
-                            </div>
-                        </div>
-                        <div class="featured-box">
-                        	<div class="featured-box-col1 wow fadeInRight delay-06s">
-                            	<i class="fa-building"></i>
-                            </div>
-                        	<div class="featured-box-col2 wow fadeInRight delay-06s">
-                                <h3>In house</h3>
-                                <p>Temos equipes que estão com você dentro da sua empresa desenvolvendo sua ideia</p>
-                            </div>
-                        </div>
                         <div class="featured-box">
                             <div class="featured-box-col1 wow fadeInRight delay-06s">
                                 <i class="fa-rocket"></i>
@@ -159,6 +132,33 @@
                             <div class="featured-box-col2 wow fadeInRight delay-06s">
                                 <h3>We <i class="fa-heart-o"></i> Start-ups</h3>
                                 <p>O espirito de start-up está no nosso sangue, conte com a gente para desenvolver sua ideia</p>
+                            </div>
+                        </div>
+                        <div class="featured-box">
+                            <div class="featured-box-col1 wow fadeInRight delay-02s">
+                                <i class="fa-heart-o"></i>
+                            </div>
+                            <div class="featured-box-col2 wow fadeInRight delay-02s">
+                                <h3>Experiência do usuário</h3>
+                                <p>Queremos que os usuários amem os aplicativos que fazemos.</p>
+                            </div>
+                        </div>
+                        <div class="featured-box">
+                            <div class="featured-box-col1 wow fadeInRight delay-06s">
+                                <i style="text-align: middle;" class="fa-building"></i>
+                            </div>
+                            <div class="featured-box-col2 wow fadeInRight delay-06s">
+                                <h3>In house</h3>
+                                <p>Temos equipes que estão com você dentro da sua empresa desenvolvendo sua ideia</p>
+                            </div>
+                        </div>
+                        <div class="featured-box">
+                        	<div class="featured-box-col1 wow fadeInRight delay-04s">
+                            	<i class="fa-lock"></i>
+                            </div>
+                            <div class="featured-box-col2 wow fadeInRight delay-04s">
+                                <h3>Segurança</h3>
+                                <p>A segurança está sempre em primeiro lugar</p>
                             </div>
                         </div>
                         <!-- <a class="Learn-More" href="#">Learn More</a> -->
@@ -478,7 +478,7 @@
                 var apps;
                 var text;
                 var appInfo =
-                    '<div class="overlay" id="overlay">' +
+                    $('<div class="overlay" id="overlay">' +
                         '<div class="app-description" id="app-info">'+
                             '<div class="row">'+
                                 '<div class="col-sm-12">'+
@@ -497,7 +497,7 @@
                                 '</div>'+
                             '</div>'+
                         '</div>' +
-                    '</div>';
+                    '</div>');
 
                 $.ajax({
                     'url': 'https://darkshine-api.herokuapp.com/',
@@ -512,11 +512,8 @@
                 $.each(appIcon, function() {
                     $(this).on('click', function () {
 
-                        if($(this).parent().parent().has('#app-info') || $(this).parent().has('#app-info')) {
-                            $('#app-info').remove();
-                        }
-
                         if ($('#app-info').length === 0) {
+                            appInfo.hide().fadeIn(600);
                             $('body').append(appInfo);
                         }
 
@@ -537,6 +534,10 @@
                             $('#app-description').append(element);
                         });
 
+
+
+                       console.log($('.appstore-badge'));
+
                         badges.forEach(function(element) {
                             $('#app-description').parent().append(element);
                         });
@@ -545,22 +546,17 @@
                             var container = $('#app-info');
 
                             if (!container.is(e.target) && container.has(e.target).length === 0) {
+                                $('.appstore-badge').remove();
                                 $('body').css('overflow-y', 'auto');
-                                container.parent().remove();
+                                $('#app-info').parent().fadeOut(600, function() { this.remove(); });
                             }
                         });
 
                         closePortfolioButton = $('#close-portfolio');
 
                         closePortfolioButton.on('click', function () {
-                            $('#app-info').parent().remove();
-                            $('body').css('overflow-y', 'auto');
-                        });
-
-                        closePortfolioButton = $('#close-portfolio');
-
-                        closePortfolioButton.on('click', function () {
-                            $('#app-info').parent().remove();
+                            $('.appstore-badge').remove();
+                            $('#app-info').parent().fadeOut(600, function() { this.remove(); });
                             $('body').css('overflow-y', 'auto');
                         });
 
