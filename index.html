@@ -526,11 +526,18 @@
                         text = app.texts;
 
                         $('#app-image').attr('src', 'img/app_mocks/' + $(this).attr('data-app') + '.png');
+
+                        var badges = app.badges;
+
                         $('#app-title').text(app.title);
                         $('#app-subTitle').text(app.subtitle);
 
-                        text.forEach(function(element, index) {
+                        text.forEach(function(element) {
                             $('#app-description').append(element);
+                        });
+
+                        badges.forEach(function(element) {
+                            $('#app-description').parent().append(element);
                         });
 
                         $(document).mouseup(function (e) {

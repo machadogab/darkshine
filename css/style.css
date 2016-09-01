@@ -916,7 +916,7 @@ img {
 
 .app-description {
     margin-top: 25vh;
-    height: 55vh;
+    height: 60vh;
     background-color: #F0F0F0;
     color: #6c6c6c;
     margin-bottom: 2%;
@@ -945,7 +945,7 @@ img {
 }
 
 .app-description p {
-    margin-top: 2em;
+    margin-top: .5em;
 }
 
 #app-image{
@@ -1021,4 +1021,8 @@ img {
 
 #app-title {
     margin-top: 1em;
+}
+
+.appstore-badge {
+    margin: 1em 0;
 }
