@@ -922,14 +922,12 @@ img {
 }
 
 .app-description {
-    margin-top: 25vh;
-    height: 60vh;
+    margin-top: 17vh;
+    height: 65vh;
     background-color: #F0F0F0;
     color: #6c6c6c;
     margin-bottom: 2%;
     padding: 4em;
-    opacity: 0;
-    display: none;
 }
 
 @media(max-width: 992px) {
@@ -968,11 +966,6 @@ img {
 
 .fade-in {
     height: 100%;
-}
-
-.app-description-open {
-    display:block;
-    opacity: 1;
 }
 
 #close-portfolio {
