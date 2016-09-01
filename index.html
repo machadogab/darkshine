@@ -478,7 +478,7 @@
                 var apps;
                 var text;
                 var appInfo =
-                    $('<div class="overlay" id="overlay">' +
+                    '<div class="overlay" id="overlay">' +
                         '<div class="app-description" id="app-info">'+
                             '<div class="row">'+
                                 '<div class="col-sm-12">'+
@@ -497,7 +497,7 @@
                                 '</div>'+
                             '</div>'+
                         '</div>' +
-                    '</div>');
+                    '</div>';
 
                 $.ajax({
                     'url': 'https://darkshine-api.herokuapp.com/',
@@ -513,8 +513,7 @@
                     $(this).on('click', function () {
 
                         if ($('#app-info').length === 0) {
-                            appInfo.hide().fadeIn(600);
-                            $('body').append(appInfo);
+                            $('body').append($(appInfo).fadeIn(600));
                         }
 
                         $('body').css('overflow-y', 'hidden');
@@ -534,10 +533,6 @@
                             $('#app-description').append(element);
                         });
 
-
-
-                       console.log($('.appstore-badge'));
-
                         badges.forEach(function(element) {
                             $('#app-description').parent().append(element);
                         });
@@ -546,7 +541,6 @@
                             var container = $('#app-info');
 
                             if (!container.is(e.target) && container.has(e.target).length === 0) {
-                                $('.appstore-badge').remove();
                                 $('body').css('overflow-y', 'auto');
                                 $('#app-info').parent().fadeOut(600, function() { this.remove(); });
                             }
@@ -555,7 +549,6 @@
                         closePortfolioButton = $('#close-portfolio');
 
                         closePortfolioButton.on('click', function () {
-                            $('.appstore-badge').remove();
                             $('#app-info').parent().fadeOut(600, function() { this.remove(); });
                             $('body').css('overflow-y', 'auto');
                         });
