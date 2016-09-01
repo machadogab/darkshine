@@ -415,11 +415,17 @@ p {
     z-index: 950;
 }
 
+@media(max-width: 992px) {
+    .Portfolio-box {
+        padding-bottom: 3em;
+    }
+}
+
 .Portfolio-box img {
     width: 50%;
     cursor: pointer;
     border-radius: 17.54%;
-    margin-bottom:25px;
+    margin-bottom:15px;
     transition:all 0.3s ease-in-out;
     -moz-transition:all 0.3s ease-in-out;
     -webkit-transition:all 0.3s ease-in-out;
