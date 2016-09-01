@@ -949,9 +949,14 @@ img {
 }
 
 #app-image{
-    height: 40vh;
-    float: right;
-    margin-right: 2em;
+    max-height: 40vh;
+    margin: 0 2em;
+}
+
+@media(min-width: 992px) {
+    #app-image {
+        float: right;
+    }
 }
 
 .fade-in {
@@ -970,9 +975,15 @@ img {
     margin-top: -2em;
 }
 
-@media(max-width: 992px) {
+@media(max-width: 480px) {
     #close-portfolio {
         width: 10%;
+    }
+}
+
+@media(min-width: 481px) and (max-width: 992px) {
+    #close-portfolio {
+        width: 5%;
     }
 }
 
@@ -1006,4 +1017,8 @@ img {
     background-color: rgba(0,0,0,.3);
     border-radius: 10px;
 
+}
+
+#app-title {
+    margin-top: 1em;
 }
