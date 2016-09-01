@@ -916,15 +916,27 @@ img {
 
 .app-description {
     margin-top: 25vh;
-    height: 50vh;
+    height: 55vh;
     background-color: #F0F0F0;
     color: #6c6c6c;
     margin-bottom: 2%;
-    padding: 2em;
-    transition: height 2s linear;
+    padding: 4em;
     opacity: 0;
     display: none;
-    overflow-y: auto;
+}
+
+@media(max-width: 992px) {
+    .app-description {
+        overflow-y: auto;
+    }
+}
+
+@media(min-width: 992px) {
+    .app-text {
+        overflow-y: auto;
+        display: inline-block;
+        max-height: 25vh;
+    }
 }
 
 .app-description h2 {
@@ -937,8 +949,9 @@ img {
 }
 
 #app-image{
-    width: 45%;
-    margin-left: 20%;
+    height: 40vh;
+    float: right;
+    margin-right: 2em;
 }
 
 .fade-in {
@@ -953,6 +966,8 @@ img {
 #close-portfolio {
     cursor: pointer;
     float: right;
+    width: 40%;
+    margin-top: -2em;
 }
 
 .close-app-description {
@@ -966,7 +981,7 @@ img {
     top: 0;
     left: 0;
     z-index: 999999;
-    background: linear-gradient(to top, rgba(0,0,0,0.6) 35%,  rgba(320,0,0,0.4));
+    background-color: rgba(32,32,32,0.95);
 }
 
 
