@@ -476,20 +476,24 @@
                 var closePortfolioButton;
                 var appIcon = $('.Portfolio-box img');
                 var apps;
+                var text;
                 var appInfo =
                     '<div class="overlay" id="overlay">' +
                         '<div class="app-description" id="app-info">'+
                             '<div class="row">'+
-                                '<div class="col-sm-12">'+
-                                    '<div class="close-app-description"><img src="img/close-icon.svg" id="close-portfolio"></div>'+
-                                '</div>'+
-                                '<div class="col-md-4">'+
+                                '<div class="col-md-4 col-md-offset-1">'+
                                     '<img src="img/bikepoa.png" id="app-image">'+
                                 '</div>'+
-                                '<div class="col-md-6 col-md-offset-1">'+
+                                '<div class="col-md-6">'+
                                     '<h2 id="app-title"></h2>'+
                                     '<h3 id="app-subTitle"></h3>'+
-                                    '<p id="app-description"></p>'+
+                                    '<div class="app-text" id="app-description">'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="col-sm-1">'+
+                                    '<div class="close-app-description">' +
+                                        '<img src="img/close-icon.svg" id="close-portfolio">' +
+                                    '</div>' +
                                 '</div>'+
                             '</div>'+
                         '</div>' +
@@ -520,10 +524,15 @@
 
                         var app = apps[$(this).attr('data-app')]
 
+                        text = app.texts;
+
                         $('#app-image').attr('src', 'img/' + $(this).attr('data-app') + '.png');
                         $('#app-title').text(app.title);
                         $('#app-subTitle').text(app.subtitle);
-                        $('#app-description').text(app.description);
+
+                        text.forEach(function(element, index) {
+                            $('#app-description').append(element);
+                        });
 
                         $(document).mouseup(function (e) {
                             var container = $('#app-info');
