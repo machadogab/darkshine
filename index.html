@@ -482,8 +482,16 @@
         </script>
 
         <script type="text/javascript">
+			var target = window.location.hash,
+			target = target.replace('#', '');
+			window.location.hash = "";
 
             $(window).load(function() {
+				if (target) {
+					$('html, body').animate({
+						scrollTop: $("#" + target).offset().top
+					}, 1500,'easeInOutExpo');
+				}
 
 				function preloadImages(array) {
 				    if (!preloadImages.list) {
