@@ -195,7 +195,7 @@
                         <h3>Regula SUS</h3>
                         <p>iOS + Web</p>
                     </div>
-                    <div class="Portfolio-box iOS">
+                    <div class="Portfolio-box iOS webdesign">
                         <img src="img/app_icons/gongo.jpg" alt="" data-app="gongo">
                         <h3>Gongo</h3>
                         <p>iOS</p>
@@ -473,6 +473,27 @@
         <script type="text/javascript">
 
             $(window).load(function() {
+
+				function preloadImages(array) {
+				    if (!preloadImages.list) {
+				        preloadImages.list = [];
+				    }
+				    var list = preloadImages.list;
+				    for (var i = 0; i < array.length; i++) {
+				        var img = new Image();
+				        img.onload = function() {
+				            var index = list.indexOf(this);
+				            if (index !== -1) {
+				                // remove image from the array once it's loaded
+				                // for memory consumption reasons
+				                list.splice(index, 1);
+				            }
+				        }
+				        list.push(img);
+				        img.src = array[i];
+				    }
+				}
+
                 var closePortfolioButton;
                 var appIcon = $('.Portfolio-box img');
                 var apps;
@@ -487,7 +508,7 @@
                                     '</div>' +
                                 '</div>'+
                                 '<div class="col-xs-12 col-sm-4 col-sm-offset-1">'+
-                                    '<img src="img/app_mocks/bikepoa.png" id="app-image">'+
+                                    '<img src="" id="app-image">'+
                                 '</div>'+
                                 '<div class="col-xs-12 col-sm-6">'+
                                     '<h2 id="app-title"></h2>'+
@@ -504,7 +525,14 @@
                     'type': 'GET',
                     'success': function(data) {
                         if (data) {
+                        	var imgs = []
                             apps = data;
+
+							for(var app in apps) { 
+								imgs.push('img/app_mocks/' + app + '.png')
+							}
+
+							preloadImages(imgs);
                         }
                     }
                 });
